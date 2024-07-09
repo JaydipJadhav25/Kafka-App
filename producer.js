@@ -13,7 +13,8 @@ await producer.send({
     messages : [
         {
             partition : 0,
-            key : 'loaction-update' , value : JSON.stringify({name : "jaydip" , loc : "pune"})
+            key : 'loaction-update' , value : JSON.stringify({name : "jaydip" , loc : "pune"}),
+            // key : 'loaction-update' , value : JSON.stringify({name : "jaydip" , loc : "phaltan"})
         }
     ]
 })
