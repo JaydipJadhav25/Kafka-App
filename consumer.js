@@ -1,8 +1,12 @@
 const {kafka} = require("./client")
 
+//
+const group = process.argv[2];
+
 async function init(){
     const consumer = kafka.consumer({
-        groupId : "user-1"
+        // groupId : "user-1"
+        groupId : group
     }); //create
 
     console.log("connecting consumer........");
@@ -18,7 +22,7 @@ async function init(){
         //att ft console.log kru
 
         // console.log(`${topic} : PART :${partition} : ${message.toString()}`)
-        console.log(`${topic} : PART :${partition} :`, message.value.toString());
+        console.log(`${group} :: ${topic} : PART :${partition} :`, message.value.toString());
     },
 
   })
